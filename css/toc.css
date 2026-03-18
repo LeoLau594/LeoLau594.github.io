@@ -1,5 +1,10 @@
 /* Table of Contents Styles */
 
+/* Fallback for CSS variables */
+:root {
+  --header-height: 64px;
+}
+
 /* Article Layout with Sidebar */
 .article-layout {
   display: flex;

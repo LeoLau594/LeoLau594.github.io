@@ -7,7 +7,10 @@ document.addEventListener('DOMContentLoaded', function() {
   var articleContent = document.getElementById('article-content');
   var tocNav = document.getElementById('toc-nav');
   
-  if (!articleContent || !tocNav) return;
+  if (!articleContent || !tocNav) {
+    console.log('TOC: article-content or toc-nav not found');
+    return;
+  }
   
   // Get all headings (h2, h3)
   var headings = articleContent.querySelectorAll('h2[id], h3[id]');
