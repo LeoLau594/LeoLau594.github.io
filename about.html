@@ -8,9 +8,10 @@
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/cyberpunk.css">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📝</text></svg>">
 </head>
 <body>
@@ -21,6 +22,7 @@
       <nav class="nav" id="nav">
         <a href="index.html" class="nav-link">首页</a>
         <a href="posts.html" class="nav-link">文章</a>
+        <a href="archive.html" class="nav-link">归档</a>
         <a href="friends.html" class="nav-link">友链</a>
         <a href="about.html" class="nav-link active">关于</a>
       </nav>
@@ -58,7 +60,7 @@
     <section class="hero" style="padding: 4rem 0 3rem;">
       <div class="hero-content">
         <h1 class="hero-title">关于我</h1>
-        <p class="hero-subtitle">很惭愧，只做了一点微小的工作</p>
+        <p class="hero-subtitle">在代码与项目之间，寻找属于自己的节奏</p>
       </div>
     </section>
 
@@ -70,37 +72,55 @@
         
         <div class="about-content">
           <h2>👋 你好，我是 Leo</h2>
-          <p>欢迎来到我的个人博客！我是一名热爱技术的开发者，喜欢探索新技术，分享学习心得。</p>
+          <p>一个在深圳搬砖的 IT 从业者，白天和系统、数据、需求打交道，晚上偶尔写写代码、折腾折腾个人项目。</p>
           
-          <h2>💻 技术栈</h2>
-          <p>
-            <span class="tag">JavaScript</span>
-            <span class="tag">TypeScript</span>
-            <span class="tag">Vue.js</span>
-            <span class="tag">React</span>
-            <span class="tag">Node.js</span>
-            <span class="tag">Python</span>
-            <span class="tag">Java</span>
-          </p>
+          <p>过去几年一直在<strong>企业数字化</strong>这个领域摸爬滚打，从主数据管理到系统集成，从低代码平台到项目交付，踩过不少坑，也攒了一些经验。虽然工作偏项目管理，但骨子里还是喜欢技术，相信好的技术能解决很多看似复杂的业务问题。</p>
           
-          <h2>🎯 兴趣爱好</h2>
+          <h2>💻 平时在捣鼓什么</h2>
           <p>
-            除了编程，我还喜欢阅读、摄影和旅行。我相信保持好奇心和持续学习是成长的关键。
+            <span class="tag">项目管理</span>
+            <span class="tag">主数据管理</span>
+            <span class="tag">系统集成</span>
+            <span class="tag">低代码平台</span>
+            <span class="tag">SQL</span>
+            <span class="tag">Web开发</span>
           </p>
+          <p style="margin-top: 0.75rem;">工作相关主要是 MDM、ESB、ERP 这些传统企业软件，业余时间喜欢研究一些轻量级的技术栈，比如这个博客就是用纯 HTML/CSS/JS 写的，没有框架、没有构建工具，简单直接。</p>
           
-          <h2>📮 联系方式</h2>
-          <p>
-            如果你对我的文章感兴趣，或者想交流技术问题，欢迎通过以下方式联系我：
-          </p>
-          <ul style="margin: 1rem 0; padding-left: 1.5rem; color: var(--text-secondary);">
-            <li>GitHub: <a href="https://github.com" target="_blank">@Leo</a></li>
-            <li>Email: <a href="mailto:example@email.com">example@email.com</a></li>
+          <h2>🎯 为什么写这个博客</h2>
+          <p>主要有几个原因：</p>
+          <ul style="margin-left: 1.5rem; color: var(--text-secondary); margin-bottom: 1rem;">
+            <li><strong>记录</strong> — 工作中遇到的问题和解决方案，记下来方便自己也方便他人</li>
+            <li><strong>梳理</strong> — 写出来是检验自己是否真正理解的好方法</li>
+            <li><strong>分享</strong> — 数字化、项目管理这些领域的中文优质内容还不够多，希望能贡献一份力量</li>
+            <li><strong>折腾</strong> — 纯粹想自己动手做一个好看的个人网站</li>
           </ul>
           
-          <h2>📝 关于博客</h2>
+          <h2>🌱 一些喜好</h2>
+          <ul style="margin-left: 1.5rem; color: var(--text-secondary);">
+            <li>喜欢简洁的设计，信奉「少即是多」</li>
+            <li>偏爱命令行工具，觉得终端有一种独特的美感</li>
+            <li>偶尔打游戏，主要是单机 RPG 和策略类</li>
+            <li>喜欢下雨天，觉得安静适合思考</li>
+          </ul>
+          
+          <h2>📮 想聊聊？</h2>
+          <p style="color: var(--text-secondary);">
+            欢迎通过邮件或 GitHub 与我交流，聊技术、聊项目、或者单纯吐槽工作都可以。看到会尽快回复。
+          </p>
           <p>
-            这个博客使用纯 HTML、CSS 和 JavaScript 构建，托管在 GitHub Pages 上。
-            博客主题采用现代化的设计风格，支持深色/浅色模式切换，响应式布局适配各种设备。
+            <a href="https://github.com/JohanLiu594" target="_blank" class="social-link">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+              GitHub
+            </a>
+          </p>
+          
+          <h2>📝 关于这个站</h2>
+          <p>
+            这是一个静态博客，托管在 GitHub Pages 上。设计灵感来源于赛博朋克风格，深色模式下有霓虹灯效果和扫描线动画。博客主题支持一键切换深色/浅色模式，响应式布局适配各种设备。
+          </p>
+          <p style="color: var(--text-muted); font-size: 0.9rem;">
+            本站不使用 Cookies 收集个人信息，不加载第三方追踪脚本，尽可能保持轻量和隐私友好。
           </p>
         </div>
       </div>
@@ -114,7 +134,6 @@
       </div>
       <div class="footer-right">
         <a href="https://github.com" target="_blank" class="footer-link">GitHub</a>
-        <a href="mailto:example@email.com" class="footer-link">Email</a>
         <a href="#" class="footer-link">RSS</a>
       </div>
     </div>

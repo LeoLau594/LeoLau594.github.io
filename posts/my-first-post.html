@@ -11,6 +11,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/cyberpunk.css">
+  <link rel="stylesheet" href="../css/toc.css">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📝</text></svg>">
 </head>
 <body>
@@ -21,6 +23,7 @@
       <nav class="nav" id="nav">
         <a href="../index.html" class="nav-link">首页</a>
         <a href="../posts.html" class="nav-link">文章</a>
+        <a href="../archive.html" class="nav-link">归档</a>
         <a href="../friends.html" class="nav-link">友链</a>
         <a href="../about.html" class="nav-link">关于</a>
       </nav>
@@ -55,7 +58,17 @@
   </header>
 
   <main class="main">
-    <article class="article">
+    <div class="article-layout">
+      <!-- Table of Contents Sidebar -->
+      <aside class="toc-sidebar">
+        <div class="toc-container">
+          <h3 class="toc-title">📋 目录</h3>
+          <nav class="toc-nav" id="toc-nav"></nav>
+        </div>
+      </aside>
+      
+      <!-- Article Content -->
+      <article class="article">
       <header class="article-header">
         <h1 class="article-title">我的第一篇博客文章</h1>
         <div class="article-meta">
@@ -75,7 +88,7 @@
         </div>
       </header>
 
-      <div class="article-content">
+      <div class="article-content" id="article-content">
         <h2 id="第一章">第一章</h2>
         <p>欢迎来到我的博客！这是我的第一篇文章，记录了我搭建这个博客的初衷和过程。</p>
         <p>在这个博客中，我将分享我的学习心得、技术积累以及生活感悟。希望这些内容能够帮助到你，也希望能够结识更多志同道合的朋友。</p>
@@ -93,15 +106,6 @@
       </div>
 
       <nav class="nav-arrows">
-        <a href="hello-world.html" class="nav-arrow prev">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="15 18 9 12 15 6"></polyline>
-          </svg>
-          <div>
-            <div>上一篇</div>
-            <div class="nav-arrow-title">Hello World</div>
-          </div>
-        </a>
         <a href="ceshi.html" class="nav-arrow next">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <polyline points="9 18 15 12 9 6"></polyline>
@@ -111,8 +115,18 @@
             <div class="nav-arrow-title">测试文章</div>
           </div>
         </a>
+        <a href="hello-world.html" class="nav-arrow prev">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+          <div>
+            <div>上一篇</div>
+            <div class="nav-arrow-title">Hello World</div>
+          </div>
+        </a>
       </nav>
-    </article>
+      </article>
+    </div>
   </main>
 
   <footer class="footer">
@@ -135,5 +149,6 @@
   </button>
 
   <script src="../js/main.js"></script>
+  <script src="../js/toc.js"></script>
 </body>
 </html>

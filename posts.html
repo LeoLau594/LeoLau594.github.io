@@ -11,7 +11,140 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/cyberpunk.css">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📝</text></svg>">
+  
+  <style>
+    /* Filter Styles */
+    .filter-bar {
+      margin-bottom: 2rem;
+      padding: 1.5rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 0.75rem;
+    }
+    
+    .filter-title {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    .filter-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+    
+    .filter-tag {
+      padding: 0.5rem 1rem;
+      background: rgba(0, 243, 255, 0.1);
+      border: 1px solid var(--border-color);
+      border-radius: 9999px;
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-family: 'Fira Code', monospace;
+    }
+    
+    .filter-tag:hover {
+      border-color: var(--neon-cyan);
+      color: var(--neon-cyan);
+      box-shadow: 0 0 10px rgba(0, 243, 255, 0.3);
+    }
+    
+    .filter-tag.active {
+      background: var(--neon-cyan);
+      border-color: var(--neon-cyan);
+      color: var(--bg-primary);
+      box-shadow: 0 0 15px var(--neon-cyan);
+    }
+    
+    .filter-tag .count {
+      margin-left: 0.5rem;
+      opacity: 0.7;
+    }
+    
+    .filter-status {
+      margin-bottom: 1.5rem;
+      padding: 1rem 1.5rem;
+      background: rgba(0, 243, 255, 0.05);
+      border: 1px solid var(--border-color);
+      border-radius: 0.5rem;
+      display: none;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    .filter-status.show {
+      display: flex;
+    }
+    
+    .filter-status-text {
+      color: var(--neon-cyan);
+      font-family: 'Fira Code', monospace;
+    }
+    
+    .filter-clear {
+      padding: 0.4rem 0.8rem;
+      background: transparent;
+      border: 1px solid var(--neon-pink);
+      border-radius: 0.25rem;
+      color: var(--neon-pink);
+      font-size: 0.8rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .filter-clear:hover {
+      background: var(--neon-pink);
+      color: var(--bg-primary);
+    }
+    
+    /* Article Card Animation */
+    .card {
+      transition: all 0.4s ease;
+    }
+    
+    .card.hidden {
+      display: none;
+    }
+    
+    .card.filtered {
+      animation: fadeInScale 0.4s ease;
+    }
+    
+    @keyframes fadeInScale {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    
+    .no-results {
+      text-align: center;
+      padding: 4rem 2rem;
+      color: var(--text-muted);
+      display: none;
+    }
+    
+    .no-results.show {
+      display: block;
+    }
+    
+    .no-results-icon {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+      opacity: 0.5;
+    }
+  </style>
 </head>
 <body>
   <header class="header">
@@ -21,6 +154,7 @@
       <nav class="nav" id="nav">
         <a href="index.html" class="nav-link">首页</a>
         <a href="posts.html" class="nav-link active">文章</a>
+        <a href="archive.html" class="nav-link">归档</a>
         <a href="friends.html" class="nav-link">友链</a>
         <a href="about.html" class="nav-link">关于</a>
       </nav>
@@ -58,15 +192,42 @@
     <section class="hero" style="padding: 4rem 0 3rem;">
       <div class="hero-content">
         <h1 class="hero-title">所有文章</h1>
-        <p class="hero-subtitle">共 4 篇文章</p>
+        <p class="hero-subtitle" id="post-count">共 4 篇文章</p>
       </div>
     </section>
 
     <section class="section">
       <div class="container">
+        <!-- Filter Bar -->
+        <div class="filter-bar">
+          <div class="filter-title">📂 按分类筛选</div>
+          <div class="filter-tags" id="filter-tags">
+            <span class="filter-tag active" data-category="all">全部<span class="count">4</span></span>
+            <span class="filter-tag" data-category="教程">教程<span class="count">2</span></span>
+            <span class="filter-tag" data-category="博客">博客<span class="count">1</span></span>
+            <span class="filter-tag" data-category="随笔">随笔<span class="count">2</span></span>
+            <span class="filter-tag" data-category="生活">生活<span class="count">1</span></span>
+            <span class="filter-tag" data-category="测试">测试<span class="count">1</span></span>
+            <span class="filter-tag" data-category="Hexo">Hexo<span class="count">1</span></span>
+          </div>
+        </div>
+        
+        <!-- Filter Status -->
+        <div class="filter-status" id="filter-status">
+          <span class="filter-status-text">正在显示: <strong id="current-filter">全部</strong></span>
+          <button class="filter-clear" onclick="clearFilter()">清除筛选</button>
+        </div>
+        
+        <!-- No Results -->
+        <div class="no-results" id="no-results">
+          <div class="no-results-icon">🔍</div>
+          <p>没有找到该分类的文章</p>
+          <button class="filter-clear" onclick="clearFilter()" style="margin-top: 1rem;">查看全部文章</button>
+        </div>
+
         <!-- Article List -->
-        <div class="blog-grid">
-          <article class="card">
+        <div class="blog-grid" id="article-grid">
+          <a class="card" href="posts/how-to-write-blog.html" data-categories="教程,博客">
             <div class="card-image" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);"></div>
             <div class="card-content">
               <div class="card-meta">
@@ -80,18 +241,16 @@
                   2025年3月18日
                 </span>
               </div>
-              <h3 class="card-title">
-                <a href="posts/how-to-write-blog.html">如何在这个博客中添加新文章</a>
-              </h3>
+              <h3 class="card-title">如何在这个博客中添加新文章</h3>
               <p class="card-excerpt">详细介绍如何在这个基于纯 HTML/CSS/JavaScript 构建的静态博客中添加新文章，包含完整的步骤指南和示例。</p>
               <div class="card-tags">
                 <span class="tag">教程</span>
                 <span class="tag">博客</span>
               </div>
             </div>
-          </article>
+          </a>
 
-          <article class="card">
+          <a class="card" href="posts/ceshi.html" data-categories="随笔,测试">
             <div class="card-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
             <div class="card-content">
               <div class="card-meta">
@@ -105,18 +264,16 @@
                   2022年4月1日
                 </span>
               </div>
-              <h3 class="card-title">
-                <a href="posts/ceshi.html">测试文章</a>
-              </h3>
+              <h3 class="card-title">测试文章</h3>
               <p class="card-excerpt">这是一篇测试文章，用于展示博客的基本功能和样式效果。</p>
               <div class="card-tags">
                 <span class="tag">随笔</span>
                 <span class="tag">测试</span>
               </div>
             </div>
-          </article>
+          </a>
 
-          <article class="card">
+          <a class="card" href="posts/my-first-post.html" data-categories="随笔,生活">
             <div class="card-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);"></div>
             <div class="card-content">
               <div class="card-meta">
@@ -130,18 +287,16 @@
                   2022年3月30日
                 </span>
               </div>
-              <h3 class="card-title">
-                <a href="posts/my-first-post.html">我的第一篇博客文章</a>
-              </h3>
+              <h3 class="card-title">我的第一篇博客文章</h3>
               <p class="card-excerpt">欢迎来到我的博客！这是我的第一篇文章，记录了我搭建这个博客的初衷和过程。</p>
               <div class="card-tags">
                 <span class="tag">随笔</span>
                 <span class="tag">生活</span>
               </div>
             </div>
-          </article>
+          </a>
 
-          <article class="card">
+          <a class="card" href="posts/hello-world.html" data-categories="Hexo,教程">
             <div class="card-image" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);"></div>
             <div class="card-content">
               <div class="card-meta">
@@ -155,16 +310,14 @@
                   2022年3月30日
                 </span>
               </div>
-              <h3 class="card-title">
-                <a href="posts/hello-world.html">Hello World</a>
-              </h3>
+              <h3 class="card-title">Hello World</h3>
               <p class="card-excerpt">Hello World！欢迎来到 Hexo 的世界。这是一篇示例文章，帮助你快速了解如何使用 Hexo 创建博客。</p>
               <div class="card-tags">
                 <span class="tag">Hexo</span>
                 <span class="tag">教程</span>
               </div>
             </div>
-          </article>
+          </a>
         </div>
       </div>
     </section>
@@ -190,5 +343,110 @@
   </button>
 
   <script src="js/main.js"></script>
+  <script>
+    // Category Filter Functionality
+    (function() {
+      const filterTags = document.querySelectorAll('.filter-tag');
+      const articles = document.querySelectorAll('.card[data-categories]');
+      const filterStatus = document.getElementById('filter-status');
+      const currentFilterText = document.getElementById('current-filter');
+      const noResults = document.getElementById('no-results');
+      const articleGrid = document.getElementById('article-grid');
+      const postCount = document.getElementById('post-count');
+      
+      let currentCategory = 'all';
+      
+      // Filter function
+      function filterArticles(category) {
+        currentCategory = category;
+        let visibleCount = 0;
+        
+        // Update filter tags
+        filterTags.forEach(tag => {
+          if (tag.dataset.category === category) {
+            tag.classList.add('active');
+          } else {
+            tag.classList.remove('active');
+          }
+        });
+        
+        // Filter articles
+        articles.forEach(article => {
+          const categories = article.dataset.categories.split(',');
+          
+          if (category === 'all' || categories.includes(category)) {
+            article.classList.remove('hidden');
+            article.classList.add('filtered');
+            visibleCount++;
+            
+            // Remove animation class after animation completes
+            setTimeout(() => {
+              article.classList.remove('filtered');
+            }, 400);
+          } else {
+            article.classList.add('hidden');
+          }
+        });
+        
+        // Update UI
+        if (category === 'all') {
+          filterStatus.classList.remove('show');
+        } else {
+          filterStatus.classList.add('show');
+          currentFilterText.textContent = category;
+        }
+        
+        // Show/hide no results
+        if (visibleCount === 0) {
+          noResults.classList.add('show');
+          articleGrid.style.display = 'none';
+        } else {
+          noResults.classList.remove('show');
+          articleGrid.style.display = 'grid';
+        }
+        
+        // Update count
+        postCount.textContent = category === 'all' 
+          ? `共 ${visibleCount} 篇文章` 
+          : `共 ${visibleCount} 篇 "${category}" 文章`;
+        
+        // Update URL without page reload
+        if (category === 'all') {
+          history.replaceState(null, '', 'posts.html');
+        } else {
+          history.replaceState(null, '', `posts.html?category=${encodeURIComponent(category)}`);
+        }
+      }
+      
+      // Add click handlers to filter tags
+      filterTags.forEach(tag => {
+        tag.addEventListener('click', function() {
+          filterArticles(this.dataset.category);
+        });
+      });
+      
+      // Clear filter function
+      window.clearFilter = function() {
+        filterArticles('all');
+      };
+      
+      // Check URL parameters on page load
+      function checkUrlParams() {
+        const params = new URLSearchParams(window.location.search);
+        const category = params.get('category');
+        
+        if (category) {
+          // Check if category exists
+          const tagExists = Array.from(filterTags).some(tag => tag.dataset.category === category);
+          if (tagExists) {
+            filterArticles(category);
+          }
+        }
+      }
+      
+      // Initialize
+      checkUrlParams();
+    })();
+  </script>
 </body>
 </html>

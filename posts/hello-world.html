@@ -11,6 +11,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/cyberpunk.css">
+  <link rel="stylesheet" href="../css/toc.css">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📝</text></svg>">
 </head>
 <body>
@@ -21,6 +23,7 @@
       <nav class="nav" id="nav">
         <a href="../index.html" class="nav-link">首页</a>
         <a href="../posts.html" class="nav-link">文章</a>
+        <a href="../archive.html" class="nav-link">归档</a>
         <a href="../friends.html" class="nav-link">友链</a>
         <a href="../about.html" class="nav-link">关于</a>
       </nav>
@@ -55,7 +58,17 @@
   </header>
 
   <main class="main">
-    <article class="article">
+    <div class="article-layout">
+      <!-- Table of Contents Sidebar -->
+      <aside class="toc-sidebar">
+        <div class="toc-container">
+          <h3 class="toc-title">📋 目录</h3>
+          <nav class="toc-nav" id="toc-nav"></nav>
+        </div>
+      </aside>
+      
+      <!-- Article Content -->
+      <article class="article">
       <header class="article-header">
         <h1 class="article-title">Hello World</h1>
         <div class="article-meta">
@@ -75,7 +88,7 @@
         </div>
       </header>
 
-      <div class="article-content">
+      <div class="article-content" id="article-content">
         <p>Welcome to <a href="https://hexo.io/" target="_blank">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank">GitHub</a>.</p>
 
         <h2 id="quick-start">Quick Start</h2>
@@ -108,7 +121,8 @@
           </div>
         </a>
       </nav>
-    </article>
+      </article>
+    </div>
   </main>
 
   <footer class="footer">
@@ -131,5 +145,6 @@
   </button>
 
   <script src="../js/main.js"></script>
+  <script src="../js/toc.js"></script>
 </body>
 </html>

@@ -20,6 +20,7 @@
   
   <!-- Styles -->
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/cyberpunk.css">
   
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📝</text></svg>">
@@ -33,6 +34,7 @@
       <nav class="nav" id="nav">
         <a href="index.html" class="nav-link active">首页</a>
         <a href="posts.html" class="nav-link">文章</a>
+        <a href="archive.html" class="nav-link">归档</a>
         <a href="friends.html" class="nav-link">友链</a>
         <a href="about.html" class="nav-link">关于</a>
       </nav>
@@ -77,22 +79,38 @@
         <h1 class="hero-title">你好，我是 Leo</h1>
         <p class="hero-subtitle">热爱技术，热爱生活，记录成长路上的点点滴滴</p>
         <div class="hero-social">
+          <!-- GitHub -->
           <a href="https://github.com" target="_blank" class="social-link" aria-label="GitHub">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
               <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
             </svg>
           </a>
-          <a href="mailto:example@email.com" class="social-link" aria-label="Email">
+          <!-- 邮箱 -->
+          <a href="mailto:example@email.com" class="social-link" aria-label="邮箱">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
               <polyline points="22,6 12,13 2,6"></polyline>
             </svg>
           </a>
-          <a href="#" class="social-link" aria-label="RSS">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M4 11a9 9 0 0 1 9 9"></path>
-              <path d="M4 4a16 16 0 0 1 16 16"></path>
-              <circle cx="5" cy="19" r="1"></circle>
+          <!-- Bilibili -->
+          <a href="https://bilibili.com" target="_blank" class="social-link" aria-label="Bilibili">
+            <svg width="20" height="20" viewBox="0 0 1024 1024" fill="currentColor">
+              <path d="M360.896 183.968L269.984 95.872s-14.208-17.472 9.824-37.248c24.16-19.648 25.376-10.912 33.504-5.472s135.2 130.816 135.2 130.816h-87.616z m301.952 3.264l90.912-88.096s14.208-17.472-9.824-37.248c-24.032-19.648-25.376-10.912-33.504-5.472s-135.2 130.816-135.2 130.816h87.616z m341.152 163.104c-3.264-137.984-123.168-164.192-123.168-164.192s-614.336-4.96-742.496 0C10.176 222.304 20 350.336 20 350.336s1.696 274.272-0.128 413.12c13.824 138.848 120.864 160.928 120.864 160.928s42.72 0.864 73.92 0.864c3.264 8.992 5.696 52.544 54.24 52.544 48.416 0 54.24-52.544 54.24-52.544s354.88-1.696 384.352-1.696c1.696 14.816 8.992 54.976 57.536 54.24 48.416-0.864 51.712-57.536 51.712-57.536s16.384-1.696 65.664 0c114.944-21.376 121.6-156.064 121.6-156.064s-1.568-275.872 0-413.856z m-98.912 439.232c0 21.728-17.248 39.456-38.464 39.456H167.2c-21.248 0-38.464-17.6-38.464-39.456V326.336c0-21.728 17.248-39.456 38.464-39.456h699.424c21.248 0 38.464 17.6 38.464 39.456v463.232zM202.4 457.152l205.344-39.456 15.52 77.184-203.648 39.456z m638.976 0l-205.344-39.456-15.648 77.184 203.776 39.456z m-418.08 191.392s45.152 81.312 95.264-26.336c48.416 105.088 101.824 27.904 101.824 27.904l30.336 19.776s-56.672 91.136-131.424 22.208c-63.232 68.928-129.728-21.952-129.728-21.952l33.728-21.6z"/>
+            </svg>
+          </a>
+          <!-- 小红书 -->
+          <a href="https://xiaohongshu.com" target="_blank" class="social-link" aria-label="小红书">
+            <svg width="20" height="20" viewBox="0 0 1024 1024">
+              <path d="M512 512m-512 0a512 512 0 1 0 1024 0 512 512 0 1 0-1024 0Z" fill="#FD2442"/>
+              <path d="M428.8 767.6928c4.4032-9.2672 8.0896-17.2544 12.032-25.1392a505.0368 505.0368 0 0 0 24.4224-49.8688 30.72 30.72 0 0 1 36.608-22.016c23.0912 1.5872 46.336 0.3584 70.4 0.3584v-289.9456c-16.2304 0-32.2048-0.5632-48.128 0-11.0592 0.5632-14.9504-2.9184-14.6432-14.3872 0.768-27.4432 0-54.9888 0-83.712h225.28v66.56c0 31.3344 0 31.3344-31.488 31.3344h-31.6416v289.9456h68.352c27.5456 0 27.5456 0 27.5456 27.904v58.4704c0 8.0896-2.0992 12.1856-11.1616 12.1856q-160.4096-0.3072-320.8192-0.256a51.2 51.2 0 0 1-6.7584-1.4336z" fill="#FFFFFF"/>
+              <path d="M471.4496 557.6704c-14.08 28.0064-26.4704 52.992-39.424 77.6192a12.3904 12.3904 0 0 1-9.472 4.5568c-31.3344 0-62.8224 1.1776-94.0544-1.0752s-43.776-21.6064-31.3344-51.2c14.2336-34.1504 31.2832-67.1232 47.0528-100.608 0.9728-2.0992 1.7408-4.2496 3.6352-8.96-12.6464 0-23.7568 0.3072-34.816 0a133.888 133.888 0 0 1-26.88-2.3552 30.72 30.72 0 0 1-24.0128-44.2368c18.9952-43.9808 40.2432-87.04 60.7744-130.304 6.7072-14.1824 13.6704-28.2112 21.1968-41.984 1.9456-3.584 6.4-8.1408 9.8304-8.2432 29.3376-0.6656 58.6752-0.3584 90.6752-0.3584-2.7648 6.8608-4.352 11.5712-6.5024 15.9744q-26.9312 54.272-54.016 108.4416c-3.6352 7.3216-8.0384 14.9504 5.5808 20.48 3.6352-18.7904 18.2784-15.36 31.1296-15.36h74.0352c-3.1232 7.1168-5.12 12.0832-7.424 16.8448-22.8352 46.08-46.08 91.8016-68.608 137.7792-9.2672 18.7392-6.144 23.296 15.36 23.5008 11.264-0.4096 22.4768-0.512 37.2736-0.512z" fill="#FFFFFF"/>
+              <path d="M431.1552 671.0784c-17.3568 33.5872-32.8704 63.7952-48.7424 93.7984a10.5984 10.5984 0 0 1-8.0384 4.352q-63.8976-0.768-128-2.304a87.7568 87.7568 0 0 1-17.1008-4.352l23.8592-46.4896c7.7824-15.36 15.36-30.72 23.7056-45.312a14.2336 14.2336 0 0 1 10.24-6.5024c39.1168 1.8944 78.2336 4.5056 117.3504 6.8096 7.8848 0.3584 15.3088 0 26.7264 0z" fill="#FFFFFF"/>
+            </svg>
+          </a>
+          <!-- 抖音 -->
+          <a href="https://douyin.com" target="_blank" class="social-link" aria-label="抖音">
+            <svg width="20" height="20" viewBox="0 0 1024 1024">
+              <path d="M884.5 434.7c-73.6 0-144.9-23.9-203.9-67.8v308.3c0 157.3-121.4 284.8-270.9 284.8-149.5 0-270.9-127.6-270.9-284.8 0-157.2 121.4-284.8 270.9-284.8 15 0 29.7 1.1 43.5 3.9v163c-13.5-5.4-28.1-8.1-42.4-8.1-66.7 0-121 56.7-121 127.2s54.4 127.2 121 127.2S531.4 747 531.4 676.4V64h151.1c0 117.9 90.9 213.1 202.7 213.1v157.6h-0.7"/>
             </svg>
           </a>
         </div>
@@ -106,7 +124,7 @@
         
         <div class="blog-grid">
           <!-- Post 1 -->
-          <article class="card">
+          <a class="card" href="posts/how-to-write-blog.html" data-categories="教程,博客">
             <div class="card-image" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);"></div>
             <div class="card-content">
               <div class="card-meta">
@@ -120,19 +138,17 @@
                   2025年3月18日
                 </span>
               </div>
-              <h3 class="card-title">
-                <a href="posts/how-to-write-blog.html">如何在这个博客中添加新文章</a>
-              </h3>
+              <h3 class="card-title">如何在这个博客中添加新文章</h3>
               <p class="card-excerpt">详细介绍如何在这个基于纯 HTML/CSS/JavaScript 构建的静态博客中添加新文章，包含完整的步骤指南和示例。</p>
               <div class="card-tags">
                 <span class="tag">教程</span>
                 <span class="tag">博客</span>
               </div>
             </div>
-          </article>
+          </a>
 
           <!-- Post 2 -->
-          <article class="card">
+          <a class="card" href="posts/ceshi.html" data-categories="随笔,测试">
             <div class="card-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
             <div class="card-content">
               <div class="card-meta">
@@ -146,19 +162,17 @@
                   2022年4月1日
                 </span>
               </div>
-              <h3 class="card-title">
-                <a href="posts/ceshi.html">测试文章</a>
-              </h3>
+              <h3 class="card-title">测试文章</h3>
               <p class="card-excerpt">这是一篇测试文章，用于展示博客的基本功能和样式效果。</p>
               <div class="card-tags">
                 <span class="tag">随笔</span>
                 <span class="tag">测试</span>
               </div>
             </div>
-          </article>
+          </a>
 
           <!-- Post 3 -->
-          <article class="card">
+          <a class="card" href="posts/my-first-post.html" data-categories="随笔,生活">
             <div class="card-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);"></div>
             <div class="card-content">
               <div class="card-meta">
@@ -172,16 +186,14 @@
                   2022年3月30日
                 </span>
               </div>
-              <h3 class="card-title">
-                <a href="posts/my-first-post.html">我的第一篇博客文章</a>
-              </h3>
+              <h3 class="card-title">我的第一篇博客文章</h3>
               <p class="card-excerpt">欢迎来到我的博客！这是我的第一篇文章，记录了我搭建这个博客的初衷和过程。</p>
               <div class="card-tags">
                 <span class="tag">随笔</span>
                 <span class="tag">生活</span>
               </div>
             </div>
-          </article>
+          </a>
 
         </div>
 
