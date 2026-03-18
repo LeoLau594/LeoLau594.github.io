@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="分类 - Leo的个人博客">
+  <title>分类 | Leo's Blog</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/cyberpunk.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📝</text></svg>">
+</head>
+<body>
+  <header class="header">
+    <div class="container header-content">
+      <a href="index.html" class="logo">Leo's Blog</a>
+      
+      <nav class="nav" id="nav">
+        <a href="index.html" class="nav-link">首页</a>
+        <a href="posts.html" class="nav-link">文章</a>
+        <a href="archive.html" class="nav-link">归档</a>
+        <a href="friends.html" class="nav-link">友链</a>
+        <a href="about.html" class="nav-link">关于</a>
+      </nav>
+      
+      <div style="display: flex; align-items: center; gap: 0.5rem;">
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题">
+          <svg class="theme-icon" id="sun-icon" style="display: none;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="theme-icon" id="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+        
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="菜单">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+    <section class="hero" style="padding: 4rem 0 3rem;">
+      <div class="hero-content">
+        <h1 class="hero-title">文章分类</h1>
+        <p class="hero-subtitle">点击分类查看相关文章</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <!-- Category Cards -->
+        <div class="category-grid">
+          <a href="posts.html?category=教程" class="category-card" data-category="教程">
+            <div class="category-icon">📚</div>
+            <div class="category-name">教程</div>
+            <div class="category-count">2 篇文章</div>
+          </a>
+          
+          <a href="posts.html?category=博客" class="category-card" data-category="博客">
+            <div class="category-icon">📝</div>
+            <div class="category-name">博客</div>
+            <div class="category-count">1 篇文章</div>
+          </a>
+          
+          <a href="posts.html?category=随笔" class="category-card" data-category="随笔">
+            <div class="category-icon">✨</div>
+            <div class="category-name">随笔</div>
+            <div class="category-count">2 篇文章</div>
+          </a>
+          
+          <a href="posts.html?category=生活" class="category-card" data-category="生活">
+            <div class="category-icon">🌟</div>
+            <div class="category-name">生活</div>
+            <div class="category-count">1 篇文章</div>
+          </a>
+          
+          <a href="posts.html?category=测试" class="category-card" data-category="测试">
+            <div class="category-icon">🔧</div>
+            <div class="category-name">测试</div>
+            <div class="category-count">1 篇文章</div>
+          </a>
+          
+          <a href="posts.html?category=Hexo" class="category-card" data-category="Hexo">
+            <div class="category-icon">🚀</div>
+            <div class="category-name">Hexo</div>
+            <div class="category-count">1 篇文章</div>
+          </a>
+        </div>
+
+        <!-- Tag Cloud -->
+        <div style="margin-top: 4rem; padding: 2rem; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 0.75rem;">
+          <h2 style="margin-bottom: 1.5rem; color: var(--neon-cyan);">标签云</h2>
+          <div style="display: flex; flex-wrap: wrap; gap: 0.75rem;">
+            <a href="posts.html?category=教程" class="tag" style="font-size: 1.2rem; padding: 0.5rem 1rem;">教程</a>
+            <a href="posts.html?category=博客" class="tag" style="font-size: 0.9rem; padding: 0.4rem 0.8rem;">博客</a>
+            <a href="posts.html?category=随笔" class="tag" style="font-size: 1.1rem; padding: 0.5rem 1rem;">随笔</a>
+            <a href="posts.html?category=生活" class="tag" style="font-size: 0.9rem; padding: 0.4rem 0.8rem;">生活</a>
+            <a href="posts.html?category=测试" class="tag" style="font-size: 0.9rem; padding: 0.4rem 0.8rem;">测试</a>
+            <a href="posts.html?category=Hexo" class="tag" style="font-size: 0.9rem; padding: 0.4rem 0.8rem;">Hexo</a>
+          </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div style="margin-top: 3rem; text-align: center;">
+          <a href="posts.html" class="tag" style="padding: 0.75rem 1.5rem; font-size: 0.95rem; display: inline-flex; align-items: center; gap: 0.5rem;">
+            <span>查看全部文章</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-left">
+        © 2022-2025 Leo. All rights reserved.
+      </div>
+      <div class="footer-right">
+        <a href="https://github.com" target="_blank" class="footer-link">GitHub</a>
+        <a href="mailto:example@email.com" class="footer-link">Email</a>
+        <a href="#" class="footer-link">RSS</a>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="back-to-top" aria-label="返回顶部">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

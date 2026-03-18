@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="归档 - Leo的个人博客">
+  <title>归档 | Leo's Blog</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/cyberpunk.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📝</text></svg>">
+</head>
+<body>
+  <header class="header">
+    <div class="container header-content">
+      <a href="index.html" class="logo">Leo's Blog</a>
+      
+      <nav class="nav" id="nav">
+        <a href="index.html" class="nav-link">首页</a>
+        <a href="posts.html" class="nav-link">文章</a>
+        <a href="archive.html" class="nav-link active">归档</a>
+        <a href="friends.html" class="nav-link">友链</a>
+        <a href="about.html" class="nav-link">关于</a>
+      </nav>
+      
+      <div style="display: flex; align-items: center; gap: 0.5rem;">
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题">
+          <svg class="theme-icon" id="sun-icon" style="display: none;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="theme-icon" id="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+        
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="菜单">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+    <section class="hero" style="padding: 4rem 0 3rem;">
+      <div class="hero-content">
+        <h1 class="hero-title">文章归档</h1>
+        <p class="hero-subtitle">按时间线追溯所有文章</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="archive-timeline">
+          <!-- 2025 -->
+          <div class="archive-year">
+            <h2 class="archive-year-title">2025</h2>
+            
+            <div class="archive-month">
+              <h3 class="archive-month-title">三月</h3>
+              <div class="archive-item">
+                <span class="archive-item-date">03-18</span>
+                <a href="posts/how-to-write-blog.html" class="archive-item-title">如何在这个博客中添加新文章</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2022 -->
+          <div class="archive-year">
+            <h2 class="archive-year-title">2022</h2>
+            
+            <div class="archive-month">
+              <h3 class="archive-month-title">四月</h3>
+              <div class="archive-item">
+                <span class="archive-item-date">04-01</span>
+                <a href="posts/ceshi.html" class="archive-item-title">测试文章</a>
+              </div>
+            </div>
+            
+            <div class="archive-month">
+              <h3 class="archive-month-title">三月</h3>
+              <div class="archive-item">
+                <span class="archive-item-date">03-30</span>
+                <a href="posts/my-first-post.html" class="archive-item-title">我的第一篇博客文章</a>
+              </div>
+              <div class="archive-item">
+                <span class="archive-item-date">03-30</span>
+                <a href="posts/hello-world.html" class="archive-item-title">Hello World</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stats -->
+        <div style="margin-top: 4rem; padding: 2rem; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 0.75rem; text-align: center;">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 2rem;">
+            <div>
+              <div style="font-size: 2.5rem; font-weight: 800; color: var(--neon-cyan); text-shadow: 0 0 20px rgba(0, 243, 255, 0.5);">4</div>
+              <div style="color: var(--text-secondary); font-size: 0.9rem;">文章总数</div>
+            </div>
+            <div>
+              <div style="font-size: 2.5rem; font-weight: 800; color: var(--neon-pink); text-shadow: 0 0 20px rgba(255, 0, 255, 0.5);">2</div>
+              <div style="color: var(--text-secondary); font-size: 0.9rem;">年份跨度</div>
+            </div>
+            <div>
+              <div style="font-size: 2.5rem; font-weight: 800; color: var(--neon-purple); text-shadow: 0 0 20px rgba(179, 0, 255, 0.5);">6</div>
+              <div style="color: var(--text-secondary); font-size: 0.9rem;">标签分类</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-left">
+        © 2022-2025 Leo. All rights reserved.
+      </div>
+      <div class="footer-right">
+        <a href="https://github.com" target="_blank" class="footer-link">GitHub</a>
+        <a href="mailto:example@email.com" class="footer-link">Email</a>
+        <a href="#" class="footer-link">RSS</a>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="back-to-top" aria-label="返回顶部">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
